@@ -52,6 +52,14 @@ class Customer
     return Film.map_items(film_data)
   end
 
+  def buy_tickets(film)
+    @funds -= film.price
+  end
+
+  # def number_of_tickets()
+  #   self.films.length
+  # end
+
 
   def self.map_items(customer_data)
     result = customer_data.map { |customer| Customer.new(customer) }
